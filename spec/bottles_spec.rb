@@ -24,6 +24,14 @@ describe Bottles do
 
         expect(bottles.verse(98)).to eq verse_98_result
       end
+
+      it 'returns the 3rd verse' do
+        verse_3_result = '3 bottles of beer on the wall, ' +
+                         "3 bottles of beer.\n" +
+                         "Take one down and pass it around, " +
+                         "2 bottles of beer on the wall.\n"
+        expect(bottles.verse(3)).to eq verse_3_result
+      end
     end
   end
 end
