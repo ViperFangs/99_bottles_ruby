@@ -21,15 +21,19 @@ Take it down and pass it around, no more bottles of beer on the wall.
 Go to the store and buy some more, 99 bottles of beer on the wall.
 "
     else
-      "#{number} bottles of beer on the wall, 99 bottles of beer.
-Take one down and pass it around, 98 bottles of beer on the wall.
+      "#{number} bottles of beer on the wall, #{number} bottles of beer.
+Take one down and pass it around, #{number - 1} bottles of beer on the wall.
 "
     end
   end
 
   def verses(from, to)
+    lyrics = ''
     from.downto(to) do |number|
-      puts verse(number)
+      lyrics += verse(number)
+      lyrics += "\n" unless number == to
     end
+
+    lyrics
   end
 end
